@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Some Page</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <button>Button</button>
+
+</body>
+
+<script>
+    console.log("start")
+    async function getData() {
+        const url = "127.0.0.1:8080/cheering_servise_Web_exploded/help-service/v1/support";
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+
+            const json = await response.json();
+            console.log(json);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+    console.log("stop")
+
+    // var a;
+    // fetch('data.json')
+    // .then(response => response.json())
+    // .then(jsonData => console.log(jsonData));
+</script>
