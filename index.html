@@ -9,23 +9,27 @@
 </body>
 
 <script>
-    console.log("start")
-    async function getData() {
-        // var url = "http://3.75.215.147:8080/hh";
-        var url = 'https://catfact.ninja/fact'
-        try {
-            var response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
+    console.log("start");
+    var url = 'https://catfact.ninja/fact';
+    var response = await fetch(url);
+    var ms = await response.text();
+    console.log(ms);
+    // async function getData() {
+    //     // var url = "http://3.75.215.147:8080/hh";
+    //     var url = 'https://catfact.ninja/fact'
+    //     try {
+    //         var response = await fetch(url);
+    //         if (!response.ok) {
+    //             throw new Error(`Response status: ${response.status}`);
+    //         }
 
-            var ms = await response.text();
-            console.log(ms);
-        } catch (error) {
-            console.error(error.message);
-        }
-    }
-    console.log("stop")
+    //         var ms = await response.text();
+    //         console.log(ms);
+    //     } catch (error) {
+    //         console.error(error.message);
+    //     }
+    // }
+    // console.log("stop")
 
     // var a;
     // fetch('data.json')
