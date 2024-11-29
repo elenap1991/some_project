@@ -11,15 +11,15 @@
 <script>
     console.log("start")
     async function getData() {
-        const url = "127.0.0.1:8080/cheering_servise_Web_exploded/help-service/v1/support";
+        const url = "http://3.75.215.147:8080/hh";
         try {
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const json = await response.json();
-            console.log(json);
+            const ms = await response.text();
+            console.log(ms);
         } catch (error) {
             console.error(error.message);
         }
