@@ -11,14 +11,15 @@
 <script>
     console.log("start")
     async function getData() {
-        const url = "http://3.75.215.147:8080/hh";
+        // var url = "http://3.75.215.147:8080/hh";
+        var url = 'https://catfact.ninja/fact'
         try {
-            const response = await fetch(url);
+            var response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const ms = await response.text();
+            var ms = await response.text();
             console.log(ms);
         } catch (error) {
             console.error(error.message);
